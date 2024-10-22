@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import {
   List,
   ListItem,
@@ -13,6 +13,10 @@ import { deleteExpense } from '../utils';
 
 const ExpenseList = ({ expenses, setExpenses, setId }) => {
   const [options, setOptions] = useState();
+
+  useEffect(() => {
+    console.log("expenses: ", expenses);
+  });
 
   const handleDelete = async (_id) => {
     // send user action to controller
